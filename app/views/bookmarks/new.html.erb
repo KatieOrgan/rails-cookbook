@@ -1,0 +1,8 @@
+<h1>Add a recipe</h1>
+
+# how to create a nested form
+<%= simple_form_for [@category, @bookmark] do |f| %>
+<%= f.association :recipe%>
+<%= f.input :comment %>
+<%= f.submit "Save your bookmark", class: "btn btn-primary" %>
+<% end %>
