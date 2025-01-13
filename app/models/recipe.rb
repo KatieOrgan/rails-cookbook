@@ -1,5 +1,5 @@
 class Recipe < ApplicationRecord
-  has_many :bookmarks, :categories
+  has_many :bookmarks
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
