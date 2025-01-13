@@ -4,3 +4,5 @@
 <%= f.input :name %>
 <%= f.submit "Save your category", class: "btn btn-primary" %>
 <% end %>
+
+<%= button_to "Back to your categories", request.referer || root_path, method: :get, class: "btn btn-secondary" %>

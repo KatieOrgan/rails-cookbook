@@ -5,3 +5,5 @@
 <li> <%= category.name %></li>
 <% end %>
 </ul>
+
+<%= button_to "Create new category", request.referer || new_category_path, method: :get, class: "btn btn-secondary" %>
