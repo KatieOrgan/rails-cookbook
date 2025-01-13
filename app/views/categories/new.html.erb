@@ -1,2 +1,6 @@
 <h1>Create a new category</h1>
-<p>need to add the form here I think</p>
+
+<%= simple_form_for @category do |f| %>
+<%= f.input :name %>
+<%= f.submit "Save your category", class: "btn btn-primary" %>
+<% end %>

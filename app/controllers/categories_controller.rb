@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.name
+    @categories = Category.all
   end
 
   def show
@@ -13,12 +13,12 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @recipe = Category.new(category_params)
-  if @list.save
-    redirect_to catetgory_path(@category)
-  else
-    render :new, status: :unprocessable_entity
-  end
+    @category = Category.new(category_params)
+    if @category.save
+      redirect_to category_path(@category)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   # def destroy
@@ -29,5 +29,4 @@ class CategoriesController < ApplicationController
   def category_params
     params.require(:category).permit(:name)
   end
-
 end
