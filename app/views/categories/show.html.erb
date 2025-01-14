@@ -1,11 +1,48 @@
-<h1><%= @category.name %></h1>
-<ul>
-  <% @category.bookmarks.each do |bookmark| %>
-  <li>
-  <%= bookmark.recipe.name %> | <%= link_to "Delete", bookmark_path(bookmark),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-  </li>
-  <% end %>
-</ul>
 
-<%= button_to "Back to your categories", request.referer || root_path, method: :get, class: "btn btn-secondary" %>
+<div class="banner">
+  <div>
+    <h1><%= @category.name %> </h1>
+  </div>
+</div>
+
+<div class="card-container">
+    <div class="info-top">
+    <h3>Recipes</h3>
+    <%= link_to 'Add a recipe', new_category_bookmark_path(@category), class: "btn btn-warning" %>
+</div>
+
+
+
+  <div class="cards">
+    <% @category.bookmarks.each do |bookmark| %>
+    <div class="card-recipe">
+
+<%= link_to bookmark_path(bookmark),
+    data: { turbo_method: :delete,
+    turbo_confirm: "Are you sure?"}, class: "btn-delete" do %>
+
+    <i class="fa-solid fa-trash"></i>
+    <% end %>
+
+      <img src="<%= bookmark.recipe.image_url%>" alt="recipe image">
+
+      <div class="card-recipe-description">
+          <h2><%= bookmark.recipe.name %></h2>
+          <p><%= bookmark.recipe.description.truncate(200) %></p>
+      </div>
+
+
+    <div class="card-recipe-info">
+      <div>
+        <i class="fa-solid fa-quote-left"></i><%= bookmark.comment %>
+      </div>
+
+    <div>
+    <%= bookmark.recipe.rating %> <%= '🌟' * bookmark.recipe.rating %>
+    </div>
+  </div>
+  </div>
+  <% end %>
+
+
+    <%= button_to "Back to your categories", request.referer || root_path, method: :get, class: "btn btn-secondary" %>
