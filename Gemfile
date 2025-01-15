@@ -33,6 +33,9 @@ gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "sassc-rails"
 
+gem "cloudinary"
+
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
