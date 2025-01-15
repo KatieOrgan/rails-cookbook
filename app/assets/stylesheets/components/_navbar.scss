@@ -1,21 +1,20 @@
-.navbar-lewagon {
+.navbar-cookbook {
   justify-content: space-between;
   background: white;
-  padding: 3px 10px;
+  padding: 1px 10px;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-cookbook .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 60px;
-  height: 60px;
+.navbar-cookbook .navbar-brand img {
+  width: 70px;
+  height: 70px;
 }
 
 a {
   text-decoration: none;
   color: black;
-  margin-left: 20px;
+  margin-left: 30px;
 }
-

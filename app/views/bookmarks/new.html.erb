@@ -1,8 +1,13 @@
+<%# mt= margin top in bootstrap %>
+
+<div class="new-form mt-5">
+
 <h1>Add a recipe to your bookmark</h1>
 
-# how to create a nested form
+<%# how to create a nested form %>
 <%= simple_form_for [@category, @bookmark] do |f| %>
 <%= f.association :recipe%>
 <%= f.input :comment %>
-<%= f.submit "Bookmark!", class: "btn btn-primary" %>
+<%= f.submit "Bookmark!", class: "btn" %>
 <% end %>
+</div>
